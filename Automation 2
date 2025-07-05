@@ -1,0 +1,39 @@
+package AutomationAssign1package;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Testing {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriverManager.firefoxdriver().setup();
+		WebDriver driver = new FirefoxDriver();
+
+		driver.get("https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php");
+		Thread.sleep(2000);
+		
+		driver.findElement(By.id("name")).sendKeys("Md Hasibur rahman Himu");
+		Thread.sleep(2000);
+        driver.findElement(By.id("email")).sendKeys("enghimu23@gmail.com");
+        Thread.sleep(2000);
+        driver.findElement(By.id("mobile")).sendKeys("01749099869");
+        Thread.sleep(2000);
+		WebElement bike=driver.findElement(By.xpath("//*[@id=\"gender\"]"));
+		bike.click();
+		Thread.sleep(2000);
+		 driver.findElement(By.xpath("//*[@id=\"state\"]")).sendKeys("Rajasthan");		
+		 Thread.sleep(2000);
+		 WebElement uploadFile = driver.findElement(By.cssSelector("input[type='file']"));
+
+		 uploadFile.sendKeys("Download/WhatsApp Image 2024-09-11 at 10.00.25 PM.jpeg");
+	
+
+		
+	}
+
+}
